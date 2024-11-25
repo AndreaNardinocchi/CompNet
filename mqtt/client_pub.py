@@ -44,7 +44,7 @@ mqttc.loop_start()
 
 # Example list of target MAC addresses to search for on the network
 target_macs = [
-        "04:E8:B9:07:9D:7E",  # Replace with actual MAC addresses you expect to find
+        "64:49:7D:8E:DE:A1",  # Replace with actual MAC addresses you expect to find
         "11:22:33:44:55:66"
 ]
     
@@ -53,5 +53,5 @@ while True:
     msgFromClient = get_environmental_data(DEVICE_ID)
     mqttc.publish(f"{BASE_TOPIC}/environment",str(msgFromClient))
     time.sleep(15)
-    devices_found=find_mac_addresses(target_macs, "192.168.1.232/24")
+    devices_found=find_mac_addresses(target_macs, "192.168.0.177/24")
     mqttc.publish(f"{BASE_TOPIC}/devices/",str(devices_found))
