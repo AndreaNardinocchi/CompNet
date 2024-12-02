@@ -1,4 +1,4 @@
-import BlynkLib
+# import BlynkLib
 from threading import Thread
 from sense_hat import SenseHat
 from music import patMusic
@@ -6,8 +6,8 @@ import time
 import pyttsx3
 from beatingHeart import beatHeartNow
 from animationColors import animatedLights
-from capture_image import capture_image
-from upload_image import upload_image
+# from capture_image import capture_image
+# from upload_image import upload_image
 
 # https://forums.raspberrypi.com/viewtopic.php?t=235173
 t1 = Thread(target=animatedLights)
