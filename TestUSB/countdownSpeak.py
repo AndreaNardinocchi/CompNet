@@ -1,20 +1,20 @@
 # import BlynkLib
-from threading import Thread
+#from threading import Thread
 from sense_hat import SenseHat
-from music import patMusic
+
 import time
 import pyttsx3
-from beatingHeart import beatHeartNow
-from animationColors import animatedLights
-from blynk_email_function import blynkEmailMum
+#from beatingHeart import beatHeartNow
+#from animationColors import animatedLights
+# from blynk_email_function import blynkEmailMum
 # from capture_image import capture_image
 # from upload_image import upload_image
 
 # https://forums.raspberrypi.com/viewtopic.php?t=235173
-t1 = Thread(target=animatedLights)
-threads = [t1]
-t2 = Thread(target=patMusic)
-threads += [t2]
+#t1 = Thread(target=animatedLights)
+#threads = [t1]
+#t2 = Thread(target=patMusic)
+#threads += [t2]
 #t3 = Thread(target=blynkEmailMum)
 #threads += [t3]
 
@@ -59,7 +59,7 @@ def countdownOne():
 
 
     for i in range(12, -1, -1):
-        if i>10:
+        if i>5:
             sense.show_message("BOOM!!!!", scroll_speed=0.03, text_colour=[255, 255, 255])
             bg = X 
             # Queue up things to say.
@@ -71,19 +71,27 @@ def countdownOne():
             # Program will not continue execution until
             # all speech is done talking
             time.sleep(0.7) 
-        elif i>5:
-            t1.start()
-            t2.start()
+        elif i<=0:
+            #t1.start()
+            #t2.start()
             
             #t3.start()
-            time.sleep(350)  
-            blynkEmailMum()
+            time.sleep(0.1) 
+            for i in range(350, -1, -1):
+                if i > 5:
+                    sense.clear(255,255,255)
+                    from music import patMusicOn
+                    patMusicOn()
+                    time.sleep(0.1) 
+                else:
+                    #blynkEmailMum()
+                    sense.clear(255,255,255)
 
 
             
         
-    for tloop in threads:
-        tloop.join()
+   # for tloop in threads:
+    #    tloop.join()
         # beatHeartNow() & patMusic() 
         
     

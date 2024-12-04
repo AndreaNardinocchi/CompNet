@@ -1,6 +1,7 @@
 import BlynkLib
 from time import sleep
 from sense_hat import SenseHat
+#from capture_image import capture_image 
 from capture_image_usb import captureImagePath
 from upload_image import upload_image
 
@@ -16,17 +17,17 @@ blynk = BlynkLib.Blynk(BLYNK_AUTH)
 
 IMAGE_PATH="./images/sensehat_image.jpg"
 
-def blynkEmailMum():
+# def blynkEmailMum():
     
-   # for i in range(350, -1, -1):
-    #    if i>0:
-     #       sense.clear()
-      #  elif i <= 0:
-    blynk.log_event('email_sent')
-    sense.clear(255,255,255)
-    captureImagePath(IMAGE_PATH)
-    result = upload_image(IMAGE_PATH)
-    blynk.set_property(1,"urls",result) 
+#for i in range(350, -1, -1):
+ #   if i>0:
+  #      sense.clear()
+   # elif i <= 0:
+blynk.log_event('email_sent')
+sense.clear(255,255,255)
+captureImagePath(IMAGE_PATH)
+result = upload_image(IMAGE_PATH)
+blynk.set_property(1,"urls",result) 
 sleep(1) # This makes the countdown work
 
 # blynkEmailMum()

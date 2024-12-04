@@ -2,4 +2,4 @@ import os
 
 os.system("bluetoothctl")
 os.system("scan on")
-os.system("<dev>= 04:E8:B9:07:9D:82")
+os.system("pair 04:CF:4B:73:F1:3B")
