@@ -27,26 +27,25 @@ engine.setProperty('volume', 0.9)  # Volume 0-1
 
 sense = SenseHat()
 
-# Z = beatHeartNow()
 R = (200, 0, 0)
 B = (0, 127, 255)
 G = (0, 200, 0)
 X = (0, 0, 0)
 W = (255,255,255)
 
-#sense.clear(Z)
 
 
+def countdownSpeak():
 
-def countdownOne():
-
-    for i in range(15, -1, -1):
-        if i>12 :
+    for i in range(120, -1, -1):
+        if i >15:
+            from digitalClock import clock
+            clock()
+        
+        elif i>12 :
            sense.clear(B)
         elif i > 9 :
            sense.clear(R)
-           #animatedLights()
-           #time.sleep(0.1)
         elif i >= 4 :
             text = R
             bg = W
@@ -62,9 +61,7 @@ def countdownOne():
         if i>5:
             sense.show_message("BOOM!!!!", scroll_speed=0.03, text_colour=[255, 255, 255])
             bg = X 
-            # Queue up things to say.
-            # There will be a short break between each one
-            # when spoken, like a pause between sentences.
+            # Speaking
             engine.say("BOOM Shut that freaking thing down, and get the hell out of here Now")
             # Flush the say() queue and play the audio
             engine.runAndWait()
@@ -72,11 +69,7 @@ def countdownOne():
             # all speech is done talking
             time.sleep(0.7) 
         elif i<=0:
-            #t1.start()
-            #t2.start()
-            
-            #t3.start()
-            time.sleep(0.1) 
+            # time.sleep(0.1) 
             for i in range(350, -1, -1):
                 if i > 5:
                     sense.clear(255,255,255)

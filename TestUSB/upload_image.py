@@ -2,8 +2,6 @@ import requests
 import os
 import json
 
-#response = requests.get('https://polar-polar-dianella.glitch.me/', verify=False)
-
 
 GLITCH_API_URL = "https://polar-polar-dianella.glitch.me/upload"  
 

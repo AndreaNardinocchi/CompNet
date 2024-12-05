@@ -4,7 +4,7 @@ import paho.mqtt.client as mqtt
 from urllib.parse import urlparse
 import time
 from env_data import get_environmental_data
-from presence_detector import find_mac_addresses 
+from ip_detector import find_myLaptopIP_Address
 
 
 # parse mqtt url for connection details. DON'T FORGET TO UPDATE YOUR_ID TO A UNIQUE ID
@@ -43,7 +43,7 @@ mqttc.connect(URL.hostname, URL.port)
 mqttc.loop_start()
 
 # Example list of target MAC addresses to search for on the network
-target_macs = [
+target_IPs = [
         "64:49:7D:8E:DE:A1",  # Replace with actual MAC addresses you expect to find
         "11:22:33:44:55:66"
 ]
@@ -53,5 +53,5 @@ while True:
     msgFromClient = get_environmental_data(DEVICE_ID)
     mqttc.publish(f"{BASE_TOPIC}/environment",str(msgFromClient))
     time.sleep(15)
-    devices_found=find_mac_addresses(target_macs, "192.168.0.177/24")
+    devices_found= find_myLaptopIP_Address(target_IPs, "192.168.0.1/24")
     mqttc.publish(f"{BASE_TOPIC}/devices/",str(devices_found))
