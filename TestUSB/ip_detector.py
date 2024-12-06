@@ -18,7 +18,7 @@ def find_myLaptopIP_Address(target_IPs, ip_range="192.168.0.1/24"):
 if __name__ == "__main__":
     # Example list of target MAC addresses to search for on the network
     target_IPs = [
-        "192.168.0.56",  # Replace with actual MAC addresses you expect to find
+        "192.168.0.56",  # Replace with actual Ip addresses you expect to find
         "11:22:33:44:55:66"
     ]
 

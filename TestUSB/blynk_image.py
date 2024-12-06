@@ -9,7 +9,7 @@ sense = SenseHat()
 sense.clear()
 
 # Blynk authentication token
-BLYNK_AUTH = 'dZI03ZMR3XjPExThzPXGFvG_GMi53dcx'
+BLYNK_AUTH = 'dZI03ZMR3XjPExThzPXGFvG_GMi53dcx' # dZI03ZMR3XjPExThzPXGFvG_GMi53dcx    bNfDoU1l_1iSHEIBZrzzGdpa_VtC6rhv
 IMAGE_PATH="./images/sensehat_image.jpg"
 # Initialise the Blynk instance
 blynk = BlynkLib.Blynk(BLYNK_AUTH)
@@ -35,9 +35,9 @@ if __name__ == "__main__":
     try:
         while True:
             blynk.run()  # Process Blynk events
-            blynk.virtual_write(1, round(sense.temperature,2))
-            blynk.virtual_write(2, round(sense.humidity, 2)) #ADD THIS LINE!!!
-            blynk.virtual_write(3, round(sense.get_pressure(), 2)) #ADD THIS LINE!!!
+           # blynk.virtual_write(1, round(sense.temperature,2))
+           # blynk.virtual_write(2, round(sense.humidity, 2)) #ADD THIS LINE!!!
+           # blynk.virtual_write(3, round(sense.get_pressure(), 2)) #ADD THIS LINE!!!
             sleep(2)  # Add a short delay to avoid high CPU usage
     except KeyboardInterrupt:
         print("Blynk application stopped.")

@@ -37,7 +37,7 @@ W = (255,255,255)
 
 def countdownSpeak():
 
-    for i in range(120, -1, -1):
+    for i in range(20, -1, -1):
         if i >15:
             from digitalClock import clock
             clock()
@@ -62,12 +62,12 @@ def countdownSpeak():
             sense.show_message("BOOM!!!!", scroll_speed=0.03, text_colour=[255, 255, 255])
             bg = X 
             # Speaking
-            engine.say("BOOM Shut that freaking thing down, and get the hell out of here Now")
+            engine.say("BOOM Shut that freaking thing down, and get the hell out of here now")
             # Flush the say() queue and play the audio
             engine.runAndWait()
             # Program will not continue execution until
             # all speech is done talking
-            time.sleep(0.7) 
+            time.sleep(0.1) 
         elif i<=0:
             # time.sleep(0.1) 
             for i in range(350, -1, -1):

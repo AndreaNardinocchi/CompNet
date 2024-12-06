@@ -15,7 +15,7 @@ try:
     def patMusic():
         print("Pat is on!!!\n")
         os.system("mpg321 PatMethenyGroup_FollowMe_live.mp3")
-        os.system("python blynk_email_function.py")
+        os.system("python blynkingMail.py")
     
 except KeyboardInterrupt:
     os.clear()
